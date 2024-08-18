@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'setup.urls'
@@ -83,6 +84,12 @@ DATABASES = {
     }
 }
 
+# Authentication
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -100,6 +107,16 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+SOCIALACCOUNT_PROVIDERS = {
+    'github': {
+        'APP': {
+            'client_id': ' ',
+            'secret': ' ',
+            'key': ''
+        }
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
