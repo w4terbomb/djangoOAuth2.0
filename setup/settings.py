@@ -26,6 +26,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Site ID
+SITE_ID = 1
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -111,8 +114,8 @@ AUTH_PASSWORD_VALIDATORS = [
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
         'APP': {
-            'client_id': ' ',
-            'secret': ' ',
+            'client_id': 'Ov23liGKOhl8w45ZiTQ4',
+            'secret': '8bab1e579bc02b7be37478a68c06ef192bbe5236',
             'key': ''
         }
     }
